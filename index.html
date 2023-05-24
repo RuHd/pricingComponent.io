@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | [Pricing Component With Toggle]</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    
+   
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Our Pricing</h1>
+    <section id="plan--options">
+      <span>Annually</span> <button><span class="toggle--icon"></span></button> <span>Monthly</span>
+    </section>
+
+    <section id="card--section">
+      <section class="card--price">
+        <header>Basic</header>
+        <h2 class="monthly--values">&dollar;19.99</h2>
+        <section class="plan--info">
+          <span>500 GBStorage</span>
+          <span>2 Users Allowed</span>
+          <span>Send up to 3 GB</span>
+        </section>
+        <a>Learn More</a>
+      </section>
+
+      <section class="card--price">
+        <header>Professional</header>
+        <h2 class="monthly--values">&dollar;24.99</h2>  
+        <section class="plan--info">
+          <span>1 TB Storage</span>
+          <span>5 Users Allowed</span>
+          <span>Send up to 10 GB</span> 
+        </section>
+        <a>Learn More</a>
+      </section>
+
+      <section class="card--price">
+        <header>Master</header>
+        <h2 class="monthly--values">&dollar;39.99</h2>  
+        <section class="plan--info">
+          <span>2 TB Storage</span>
+          <span>10 Users Allowed</span>
+          <span>Send up to 20 GB</span>
+        </section>        
+        <a>Learn More</a>
+      </section>
+    </section>
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Ruan Mesquita</a>.
+    </footer>
+  </main>
+
+  
+</body>
+<script>
+  const btn = document.querySelector("button")
+  const toggleIcon = btn.querySelector(".toggle--icon")
+  const prices = document.querySelectorAll("h2")
+  const annualValues = ["199.99","249.99","399.99"]
+  const monthValues = ["19.99","24.99","39.99"]
+  
+  
+
+  btn.addEventListener("click", () => {
+    toggleIcon.classList.toggle("onLeft")
+
+    if (toggleIcon.classList.contains("onLeft")) {
+      prices.forEach((value,i) => value.innerText = `$${annualValues[i]}`)
+    } else {
+      prices.forEach((value,i) => value.innerText = `$${monthValues[i]}`)
+    }
+
+    
+  })
+</script>
+</html>

@@ -1,0 +1,239 @@
+*,*::after,*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 15px;
+    background-color: #F7F5FF;
+    background-image:linear-gradient((hsl(236, 72%, 79%) to hsl(237, 63%, 64%)));
+    
+  }
+
+  body * {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  body::after {
+    position: fixed;
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    background-image: url("images/bg-top.svg");
+    background-repeat: no-repeat;
+    background-position-x: right;
+  }
+
+  body::before {
+    position: fixed;
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    background-image: url("images/bg-bottom.svg");
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: bottom;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+  }
+
+  #plan--options {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 250px;
+
+  }
+
+  #plan--options span {
+    color: #7b7b8ac0;
+  }
+
+  #plan--options button {
+    position: relative;
+    background-color: hsl(237, 63%, 64%);
+    width: 55px;
+    height: 30px;
+    border-radius: 20px;
+    transition: .5s;
+  }
+
+  #plan--options button:hover {
+    cursor: pointer;
+    opacity: .5;
+  }
+
+  /* Toggle icon => left: 4px, right: 26px */
+  .toggle--icon {
+    position: absolute;
+    background-color: white;
+    height: 25px;
+    width: 25px;
+    left: 26px;  
+    top: 2.5px;
+    border-radius: 50%;
+    transition: left .3s;
+    transition-timing-function: ease-in-out;
+  } 
+
+  .onLeft {
+    left: 4px;
+  }
+
+  h1 {
+    color: #7B7B8A;
+  }
+
+  #card--section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .card--price {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: var(--cardHeight);
+    width: 250px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.247);
+  }
+  :root {
+    --cardHeight : 320px;
+  }
+  .card--price h2 {
+    font-weight: bold;
+    font-size: 3.1em;
+    color: rgba(0, 0, 0, 0.733);
+  }
+
+  .card--price a {
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 5px 0;
+    background-image: linear-gradient(to right,hsl(236, 72%, 79%) , hsl(237, 63%, 64%)) ;
+    border: 1px solid hsl(237, 63%, 64%);
+    padding: 7px;
+    transition: .5s;
+  }
+
+  .card--price a:hover {
+    color: hsl(237, 63%, 64%);;
+    cursor: pointer;
+    background-image: none  ;
+  }
+
+  .card--price:nth-child(2) {
+    justify-content: center;
+    gap: 14px;
+    height: calc(var(--cardHeight) + 23px);
+    color: white;
+    background-image: linear-gradient(hsl(236, 72%, 79%) , hsl(237, 63%, 64%)) ;
+
+  }
+
+  .card--price:nth-child(2) h2 {
+    color: white;
+  }
+
+  .card--price:nth-child(2) a {
+    background-image: none;
+    background-color: white;
+    color: hsl(237, 63%, 64%);
+    border: 1px solid white;
+  }
+
+  .card--price:nth-child(2) a:hover {
+    background-color: transparent;
+    color: white;
+  } 
+
+  
+
+  .card--price:nth-child(2) .plan--info * {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.253);
+    border-top: 1px solid rgba(255, 255, 255, 0.253);
+  }
+
+  .plan--info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .plan--info * {
+    display: block;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.096);
+    border-top: 1px solid rgba(0, 0, 0, 0.096);
+    width: 100%;
+    height: 30px;
+    display: flex;
+    line-height: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+  /* RESPONSIVE DESIGN SECTION */
+
+  @media screen and (max-width: 720px) {
+
+    body {
+        height: 100%;
+        padding: 10px 0 ;
+    }
+    body::before {
+          background-image: none;
+    }
+    main {
+     
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;    
+    }
+
+    h1 {
+
+        z-index: 100;
+    }
+    #card--section {
+          flex-direction: column;
+          gap: 20px;
+    }
+
+    footer {
+        width: 100%;
+        text-align: center;
+    }
+
+ 
+  }
